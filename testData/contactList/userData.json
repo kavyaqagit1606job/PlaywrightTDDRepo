@@ -1,0 +1,20 @@
+{
+  "valid": [
+    {
+      "userName": "qa1234@gmail.com",
+      "password": "password"
+    }
+  ],
+  "invalid": [
+    {
+      "userName": "Admin",
+      "password": "50000"
+    }
+  ],
+  "Blank": [
+    {
+      "username": "",
+      "password": ""
+    }
+  ]
+}
