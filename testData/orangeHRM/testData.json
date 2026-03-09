@@ -1,0 +1,25 @@
+{
+  "jobs": [
+    {
+      "jobTitle": "SDETEngineer",
+      "description": "Responsible for building automation frameworks",
+      "note": "This is Test Data"
+    }
+  ],
+  "grades": [
+    {
+      "name": "Grade",
+      "minsalary": 50000,
+      "maxsalary": 80000
+    }
+  ],
+  "users": [
+    {
+      "username": "QA",
+      "password": "ThisisTestData123!",
+      "employeeName": "Orange Test",
+      "userRole": "Admin",
+      "status": "Enabled"
+    }
+  ]
+}

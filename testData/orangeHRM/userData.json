@@ -1,0 +1,20 @@
+{
+  "valid": [
+    {
+      "userName": "Admin",
+      "password": "admin123"
+    }
+  ],
+  "invalid": [
+    {
+      "userName": "Admin",
+      "password": "50000"
+    }
+  ],
+  "Blank": [
+    {
+      "username": "",
+      "password": ""
+    }
+  ]
+}
