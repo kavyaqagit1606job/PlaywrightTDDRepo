@@ -1,4 +1,4 @@
-const { test, expect } = require('../src/fixtures');
+const { test, expect } = require('../../src/fixtures');
 
 test.describe('Login', () => {
 
@@ -16,7 +16,7 @@ test.describe('Login', () => {
   });
 
 
-  const { invalid } = require('../testData/orangeHRM/userData.json');
+  const { invalid } = require('../../testData/orangeHRM/userData.json');
 
   for (const [i, creds] of invalid.entries()) {
     test(`TC-LOGIN-00${i + 2} | Invalid credentials [${i + 1}] - error shown`, async ({ loginPage }) => {

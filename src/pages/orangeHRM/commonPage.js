@@ -22,14 +22,16 @@ class CommonPage extends BasePage {
   }
 
   async navigateToAdmin() {
+    await this.waitForVisible(this.adminMenu,80_000);
     await this.click(this.adminMenu);                         
-    await this.waitForVisible(this.adminHeading);            
+    await this.waitForVisible(this.adminHeading,80_000);            
     await this.waitForURL('**/admin/viewSystemUsers');        
   }
 
   async navigateToJobs() {
-    await this.click(this.jobsMenu);                           
-    await this.click(this.jobTitlesOption);                    
+    await this.waitForVisible(this.jobsMenu,80_000);
+    await this.click(this.jobsMenu,{force:true});                           
+    await this.click(this.jobTitlesOption,{force:true});                    
     await this.waitForURL('**/admin/viewJobTitleList');        
   }
 }

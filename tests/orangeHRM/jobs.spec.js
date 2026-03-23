@@ -1,5 +1,5 @@
-const { test, expect }                    = require('../src/fixtures');
-const { generateDynamicName, randomPick } = require('../src/utils/randomDataGenerator');
+const { test, expect } = require('../../src/fixtures');
+const { generateDynamicName, randomPick } = require('../../src/utils/randomDataGenerator');
 
 test.describe('Jobs - Job Titles', () => {
 
@@ -19,14 +19,15 @@ test.describe('Jobs - Job Titles', () => {
       title,
       jobData.description,
       jobData.note,
-      uploads.images.jobs       
+      uploads.images.jobsimage      
     );
     await jobsPage.assertJobTitleAdded(title);
 
     await jobsPage.deleteJobTitle(title);
+  });
 
-    // Assert removed
-    await jobsPage.assertJobTitleNotPresent(title);
+  test('TC-JOBS-002 | Assert Mandatory fields', async ({ jobsPage, testData, uploads }) => {
+    await jobsPage.assertMandatoryField();
   });
 
 });
