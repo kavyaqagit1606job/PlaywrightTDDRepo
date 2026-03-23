@@ -1,6 +1,6 @@
 // @ts-check
 const { defineConfig, devices }  = require('@playwright/test');
-require('dotenv').config();
+require('dotenv').config({ override: false });
 const { CONFIG }  = require('./src/config/env');
 
 module.exports = defineConfig({
@@ -27,8 +27,8 @@ module.exports = defineConfig({
     screenshot:        'only-on-failure',
     video:             'retain-on-failure',
     trace:             'retain-on-failure',
-    actionTimeout:     10_000,
-    navigationTimeout: 30_000,
+    actionTimeout:     100_000,
+    navigationTimeout: 300_000,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
   },
 

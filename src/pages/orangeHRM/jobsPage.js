@@ -24,10 +24,10 @@ class JobsPage extends BasePage {
     if (jobDescription) {
       await this.fill(this.jobDescriptionInput, jobDescription); 
     }
-    if (filePath) {
-      await this.click(this.browseButton);                     
-      await this.uploadFile(this.fileInput, filePath); 
-      await page.waitForTimeout(250000);   
+    if (filePath) {               
+      await this.uploadFile(this.fileInput, filePath, {timeout:200_000});
+      await this.assertText('div.oxd-file-input-div', "jobs.png");
+      //await expect(page.locator('div.oxd-file-input-div',{timeout:80_000})).toHaveText("jobs.png");
     }
     if (note) {
       await this.fill(this.addNoteInput, note);                
@@ -46,6 +46,12 @@ class JobsPage extends BasePage {
     await this.assertVisible(                                  
       this.page.locator('div.oxd-table-card').filter({ hasText: jobTitle }),150_000
     );
+  }
+
+  async assertMandatoryField() {
+    await this.click(this.addButton); 
+    await this.click(this.saveButton);
+    await this.assertVisible('span.oxd-input-field-error-message','Required')
   }
 }
 

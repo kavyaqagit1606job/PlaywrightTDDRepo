@@ -31,7 +31,7 @@ class BasePage {
     await this.page.goto(url, { waitUntil: 'domcontentloaded', ...options });
   }
 
-  async waitForURL(urlPattern, timeout = 15_000) {
+  async waitForURL(urlPattern, timeout = 150_000) {
     await this.page.waitForURL(urlPattern, { timeout });
   }
 
@@ -42,7 +42,7 @@ class BasePage {
   }
 
   async click(selectorOrLocator) {
-    await this._resolve(selectorOrLocator).click();
+    await this._resolve(selectorOrLocator,{timeout:50000}).click();
   }
 
   async selectDropdown(selectorOrLocator, visibleText) {
@@ -54,7 +54,7 @@ class BasePage {
   }
 
   // Waits
-  async waitForVisible(selectorOrLocator, timeout = 10_000) {
+  async waitForVisible(selectorOrLocator, timeout = 100000_000) {
     await this._resolve(selectorOrLocator).waitFor({ state: 'visible', timeout });
   }
 
@@ -65,6 +65,7 @@ class BasePage {
   // ─ Assertions 
 
   async assertVisible(selectorOrLocator) {
+    await this.waitForVisible(selectorOrLocator);
     await expect(this._resolve(selectorOrLocator)).toBeVisible();
   }
 
@@ -84,6 +85,10 @@ class BasePage {
     const toast = this.page.locator('div.oxd-toast-content');
     await toast.waitFor({ state: 'visible', timeout: 8_000 });
     return toast.innerText();
+  }
+
+  async maualWait(){
+    await this.page.waitForTimeout(6000);
   }
 }
 

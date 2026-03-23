@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "firstName":     "John",
+      "lastName":      "Doe",
+      "birthdate":     "1990-01-01",
+      "email":         "johndoe@fake.com",
+      "phone":         "8005551234",
+      "street1":       "1 Main St",
+      "street2":       "Apartment A",
+      "city":          "Anytown",
+      "stateProvince": "KS",
+      "postalCode":    "12345",
+      "country":       "US"
+    }
+  ],
+  "users":[
+    {
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test@fake.com",
+    "password": "myPassword"
+    }
+  ]
+}

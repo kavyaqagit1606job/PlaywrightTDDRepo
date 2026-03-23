@@ -31,7 +31,7 @@ const base = path.resolve(
 
 const uploadPaths = {
   images: {
-    sample: path.join(base, 'images', 'sample.png')
+    jobsimage: path.join(base, 'images', 'jobs.png')
     // add more:  logo: path.join(base, 'images', 'logo.jpg')
   },
   documents: {
